@@ -1,0 +1,8 @@
+﻿@model KatalogProizvoda.Models.ProizvodZaPreuzimanje
+@{
+    ViewBag.Title = "ProizvodiZaPreuzimanje";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Proizvodi za preuzimanje</h2>
+@Html.ActionLink("New Proizvod", "New", "ProizvodZaPreuzimanje", null, new { @class = "btn btn-primary" })

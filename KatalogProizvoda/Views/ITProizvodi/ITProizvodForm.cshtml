@@ -1,0 +1,49 @@
+﻿@model KatalogProizvoda.ViewModels.ITProizvodViewModel
+@{
+    ViewBag.Title = "ITProizvodForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ITProizvodForm</h2>
+@using (Html.BeginForm("Save", "ITProizvodi"))
+{
+    @Html.ValidationSummary(true, "Please enter required fields correctly.")
+    <div class="form-group">
+        @Html.LabelFor(i => i.ITProizvod.Kamera)
+        @Html.TextBoxFor(i => i.ITProizvod.Kamera, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.ITProizvod.Kamera)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ITProizvod.Miš)
+        @Html.TextBoxFor(m => m.ITProizvod.Miš, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ITProizvod.Miš)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ITProizvod.Laptop)
+        @Html.TextBoxFor(m => m.ITProizvod.Laptop, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ITProizvod.Laptop)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ITProizvod.PC)
+        @Html.TextBoxFor(m => m.ITProizvod.PC, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ITProizvod.PC)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ITProizvod.Slušalice)
+        @Html.TextBoxFor(m => m.ITProizvod.Slušalice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ITProizvod.Slušalice)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ITProizvod.Zvučnik)
+        @Html.TextBoxFor(m => m.ITProizvod.Zvučnik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ITProizvod.Zvučnik)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ITProizvod.Tipkovnica)
+        @Html.TextBoxFor(m => m.ITProizvod.Tipkovnica, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ITProizvod.Tipkovnica)
+    </div>
+    @Html.HiddenFor(m => m.ITProizvod.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
